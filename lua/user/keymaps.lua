@@ -4,9 +4,8 @@ local keymap = vim.keymap.set
 local opts = { silent = true }
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-
+keymap("", "<Space>", "<Nop>", opts)
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -16,21 +15,22 @@ vim.g.mapleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
+-- Better window navigation
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<C-Up>", ":resize +2<CR>", opts)
+keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -38,17 +38,27 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
+-- Move text up and down
+-- keymap("n", "<A-,>", "<Esc>:m .+1<CR>==gi", opts)
+-- keymap("n", "<A-.>", "<Esc>:m .-2<CR>==gi", opts)
+
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
 -- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+--
+--
 
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Move text up and down
+keymap("v", "<S-k>", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "<S-j>", ":m '<-2<CR>gv=gv", opts)
+keymap("x", "<S-k>", ":m '>+1<CR>gv=gv", opts)
+keymap("x", "<S-j>", ":m '<-2<CR>gv=gv", opts)
 
 -- Plugins --
 
