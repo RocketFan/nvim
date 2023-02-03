@@ -134,22 +134,13 @@ local mappings = {
     w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>Mason<cr>", "Mason Info" },
-    j = {
-      vim.diagnostic.goto_next,
-      "Next Diagnostic",
-    },
-    k = {
-      vim.diagnostic.goto_prev,
-      "Prev Diagnostic",
-    },
+    j = { vim.diagnostic.goto_next, "Next Diagnostic" },
+    k = { vim.diagnostic.goto_prev, "Prev Diagnostic" },
     l = { vim.lsp.codelens.run, "CodeLens Action" },
     q = { vim.diagnostic.setloclist, "Quickfix" },
     r = { vim.lsp.buf.rename, "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    S = {
-      "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-      "Workspace Symbols",
-    },
+    S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
     e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
   },
   s = {
@@ -169,6 +160,13 @@ local mappings = {
       "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
       "Colorscheme with Preview",
     },
+  },
+  C = {
+    name = "CMake",
+    g = { ":CMakeGenerate<cr>", "Generate" },
+    b = { ":CMakeBuild<cr>", "Build" },
+    q = { ":CMakeClose<cr>", "Close" },
+    c = { ":CMakeClean<cr>", "Clean" },
   },
   T = {
     name = "Treesitter",
