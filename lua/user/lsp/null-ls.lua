@@ -19,5 +19,6 @@ null_ls.setup {
     formatting.stylua,
     formatting.black.with { extra_args = { "--fast", "--line-length=120" } },
     diagnostics.flake8.with { extra_args = { "--extend-ignore=E3,E501,W292" } },
+    -- diagnostics.pylint,
   },
 }
