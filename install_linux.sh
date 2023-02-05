@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install dependencies
-sudo apt install -y npm
+sudo apt install -y npm curl snap
 
 # Install lst Node
 sudo npm install -g n
@@ -14,7 +14,6 @@ sudo n latest
 
 # Install NVIM
 sudo snap install nvim --classic
-echo 'alias vim="nvim"' >> ~/.bashrc
 
 # Install vim plugins
 nvim +PlugInstall +qall
@@ -36,4 +35,5 @@ LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/re
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
+rm lazygit lazygit.tar.gz
 
