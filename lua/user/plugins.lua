@@ -60,7 +60,10 @@ return packer.startup(function(use)
   use { "lukas-reineke/indent-blankline.nvim", commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" }
   use { "goolord/alpha-nvim", commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" }
   use { "folke/which-key.nvim", commit = "16ed12a8493628c377606da2ebac50d80736ed37" }
-  use { "cdelledonne/vim-cmake" }
+  use { "jamestthompson3/nvim-remote-containers", commit = "5c689be74f726806754d67de4eb21539c8efb620" }
+  use { "tpope/vim-surround", commit = "aeb933272e72617f7c4d35e1f003be16836b948d" }
+  use { "tpope/vim-repeat", commit = "8106e142dfdc278ff3eaaadd7b362ad7949d4357" }
+  use { "cdelledonne/vim-cmake", tag = "v0.12.1" }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
