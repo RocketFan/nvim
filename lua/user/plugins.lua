@@ -64,6 +64,7 @@ return packer.startup(function(use)
   use { "tpope/vim-surround", commit = "aeb933272e72617f7c4d35e1f003be16836b948d" }
   use { "tpope/vim-repeat", commit = "8106e142dfdc278ff3eaaadd7b362ad7949d4357" }
   use { "cdelledonne/vim-cmake", tag = "v0.12.1" }
+  use { "folke/trouble.nvim", tag = "v1.0.0" }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
