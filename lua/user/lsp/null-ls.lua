@@ -16,9 +16,8 @@ null_ls.setup {
       extra_filetypes = { "toml" },
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
     },
-    formatting.black.with { extra_args = { "--fast" } },
     formatting.stylua,
-    formatting.google_java_format,
-    diagnostics.flake8,
+    formatting.black.with { extra_args = { "--fast", "--line-length=120" } },
+    diagnostics.flake8.with { extra_args = { "--extend-ignore=E3,E501,W292" } },
   },
 }
