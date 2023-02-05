@@ -21,6 +21,7 @@ wk.setup {
       nav = false, -- misc bindings to work with windows
       z = false, -- bindings for folds, spelling and others prefixed with z
       g = false, -- bindings for prefixed with g
+      d = false,
     },
   },
   triggers = "auto",
@@ -111,21 +112,12 @@ local mappings = {
     r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
     R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
     s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-    u = {
-      "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-      "Undo Stage Hunk",
-    },
+    u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    C = {
-      "<cmd>Telescope git_bcommits<cr>",
-      "Checkout commit(for current file)",
-    },
-    d = {
-      "<cmd>Gitsigns diffthis HEAD<cr>",
-      "Git Diff",
-    },
+    C = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)" },
+    d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Git Diff" },
   },
   l = {
     name = "LSP",
@@ -142,6 +134,8 @@ local mappings = {
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
     e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
+    f = { vim.lsp.buf.format, "Format" },
+    R = { "<cmd>LspRestart<cr>", "Restart" },
   },
   s = {
     name = "Search",
@@ -174,4 +168,9 @@ local mappings = {
   },
 }
 
-wk.register(mappings, { prefix = "<leader>" })
+local vmappings = {
+  ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
+}
+
+wk.register(mappings, { mode = "n", prefix = "<leader>" })
+wk.register(vmappings, { mode = "v", prefix = "<leader>" })
