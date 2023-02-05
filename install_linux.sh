@@ -1,11 +1,15 @@
 #!/bin/bash
 
 # Install dependencies
-sudo apt install -y npm curl software-properties-gtk
+sudo apt install -y npm curl software-properties-gtk unzip
 
 # Install lst Node
 sudo npm install -g n
 sudo n latest
+
+sudo npm install -g neovim
+
+pip install neovim
 
 
 #############
@@ -14,7 +18,7 @@ sudo n latest
 
 # Install NVIM
 # sudo snap install nvim --classic
-sudo add-apt-repository -y ppa:neovim-ppa/stable
+sudo add-apt-repository -y ppa:neovim-ppa/unstable
 sudo apt update
 sudo apt install -y neovim
 
