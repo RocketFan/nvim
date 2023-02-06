@@ -42,6 +42,7 @@ nvim_tree.setup {
         },
       },
     },
+    symlink_destination = false,
   },
   diagnostics = {
     enable = true,
@@ -54,7 +55,12 @@ nvim_tree.setup {
     },
   },
   view = {
-    width = 30,
+    adaptive_size = true,
+    width = {
+      min = 30,
+      max = 50,
+      padding = 1,
+    },
     side = "left",
     mappings = {
       list = {
