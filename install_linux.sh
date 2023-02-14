@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install dependencies
-sudo apt install -y npm curl software-properties-gtk unzip ctags
+sudo apt install -y npm curl software-properties-gtk unzip ripgrep
 
 # Install lst Node
 sudo npm install -g n
@@ -11,6 +11,15 @@ sudo npm install -g neovim @johnnymorganz/stylua-bin
 sudo apt install -y clang-format
 
 pip install neovim
+
+# Install ctags
+sudo apt-get install libjansson-dev
+git clone https://github.com/universal-ctags/ctags.git --depth=1
+cd ctags
+./autogen.sh
+./configure
+make
+sudo make install
 
 
 #############

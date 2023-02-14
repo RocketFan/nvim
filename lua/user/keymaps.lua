@@ -55,10 +55,10 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<S-k>", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "<S-j>", ":m '<-2<CR>gv=gv", opts)
-keymap("x", "<S-k>", ":m '>+1<CR>gv=gv", opts)
-keymap("x", "<S-j>", ":m '<-2<CR>gv=gv", opts)
+keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", opts)
+keymap("x", "<S-j>", ":m '>+1<CR>gv=gv", opts)
+keymap("x", "<S-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- Plugins --
 
