@@ -81,6 +81,7 @@ return packer.startup(function(use)
       vim.fn["mkdp#util#install"]()
     end,
   }
+  use { "nvim-pack/nvim-spectre", commit = "1d8b7a40677fd87da7648d246c4675c3612a7582" }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
