@@ -123,7 +123,8 @@ local mappings = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
     d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
-    w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
+    w = { vim.lsp.buf.add_workspace_folder, "Add workspace folder" },
+    t = { "<cmd>Telescope diagnostics<cr>", "Telescope diagnostics" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>Mason<cr>", "Mason Info" },
     j = { vim.diagnostic.goto_next, "Next Diagnostic" },
@@ -162,10 +163,7 @@ local mappings = {
     q = { ":CMakeClose<cr>", "Close" },
     c = { ":CMakeClean<cr>", "Clean" },
   },
-  T = {
-    name = "Treesitter",
-    i = { ":TSConfigInfo<cr>", "Info" },
-  },
+  T = { "<cmd>TagbarToggle<cr>", "Tagbar" }, 
 }
 
 local vmappings = {
