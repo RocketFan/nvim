@@ -14,8 +14,16 @@ null_ls.setup {
   sources = {
     formatting.prettier.with {
       extra_filetypes = { "toml" },
-      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+      extra_args = {
+        "--no-semi",
+        "--single-quote",
+        "--jsx-single-quote",
+        "--tab-width 4",
+        "--print-width 120",
+      },
     },
+    -- formatting.clang_format.with { extra_args = { '--style="{IndentWidth: 8, ObjCBlockIndentWidth: 8, ColumnLimit: 120}"' } },
+    -- formatting.clang_format,
     formatting.stylua,
     formatting.black.with { extra_args = { "--fast", "--line-length=120" } },
     diagnostics.flake8.with { extra_args = { "--extend-ignore=E3,E501,W292" } },

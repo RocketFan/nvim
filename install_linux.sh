@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # Install dependencies
-sudo apt install -y npm curl software-properties-gtk unzip
+sudo apt install -y npm curl software-properties-gtk unzip ctags
 
 # Install lst Node
 sudo npm install -g n
 sudo n latest
 
-sudo npm install -g neovim
+sudo npm install -g neovim @johnnymorganz/stylua-bin 
+sudo apt install -y clang-format
 
 pip install neovim
 
