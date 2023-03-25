@@ -66,7 +66,21 @@ return packer.startup(function(use)
   use { "cdelledonne/vim-cmake", tag = "v0.12.1" }
   use { "folke/trouble.nvim", tag = "v1.0.0" }
   use { "mg979/vim-visual-multi", tag = "v0.5.8" }
-  -- use { "preservim/tagbar", tag = "v3.1.1" } -- TODO: Lagging problems
+  use { "liuchengxu/vista.vim", commit = "33774aff5d8b224f24c2e4c6015c613c1a17bf74" }
+  use {
+    "junegunn/fzf",
+    run = function()
+      vim.fn["fzf#install"]()
+    end,
+  }
+  use { "junegunn/fzf.vim" }
+  use {
+    "iamcco/markdown-preview.nvim",
+    commit = "02cc3874738bc0f86e4b91f09b8a0ac88aef8e96",
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
@@ -94,6 +108,7 @@ return packer.startup(function(use)
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
+  use { "nvim-telescope/telescope-fzf-native.nvim", commit = "580b6c48651cabb63455e97d7e131ed557b8c7e2" }
 
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac" }

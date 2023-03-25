@@ -163,7 +163,7 @@ local mappings = {
     q = { ":CMakeClose<cr>", "Close" },
     c = { ":CMakeClean<cr>", "Clean" },
   },
-  T = { "<cmd>TagbarToggle<cr>", "Tagbar" }, 
+  T = { "<cmd>Vista!!<cr>", "Tagbar" },
 }
 
 local vmappings = {
