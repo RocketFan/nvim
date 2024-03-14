@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -e
+cd /tmp
+
 # Install dependencies
 sudo apt install -y npm curl software-properties-gtk unzip ripgrep
 
@@ -10,11 +13,13 @@ sudo n latest
 sudo npm install -g neovim @johnnymorganz/stylua-bin 
 sudo apt install -y clang-format
 
-pip install neovim
+pip3 install neovim
 
 # Install ctags
-sudo apt-get install libjansson-dev
-git clone https://github.com/universal-ctags/ctags.git --depth=1
+sudo apt-get install -y libjansson-dev autotools-dev autoconf
+if [ ! -d "ctags" ]; then
+    git clone https://github.com/universal-ctags/ctags.git --depth=1
+fi
 cd ctags
 ./autogen.sh
 ./configure
@@ -27,20 +32,15 @@ sudo make install
 #############
 
 # Install NVIM
-# sudo snap install nvim --classic
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
 sudo apt update
 sudo apt install -y neovim
 
 # Install vim plugins
-nvim +PlugInstall +qall
+nvim +PackerInstall +qall
 
 # Install formatters and linters 
 sudo npm install -g prettier
-
-# Install YCM for vim
-sudo apt install build-essential cmake python3-dev -y
-python3 ~/.local/share/nvim/plugged/youcompleteme/install.py --clangd-completer
 
 
 #################
